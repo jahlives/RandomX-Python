@@ -17,7 +17,7 @@ sources = [source for source in sources if 'jit_' not in source and  'tests' not
 if machine in ['i386', 'i686', 'x86_64']:
     sources.extend(['jit_compiler_x86.cpp', 'jit_compiler_x86_static.S'])
 elif machine in ['aarch64_be', 'aarch64', 'armv8b', 'armv8l']:
-    sources.extend(['jit_compiler_a64_static.s', 'jit_compiler_a64.cpp'])
+    sources.extend(['jit_compiler_a64_static.S', 'jit_compiler_a64.cpp'])
     compile_flags.append('-DHAVE_HWCAP')
 elif machine.startswith('ppc'):
     compile_flags.append('-mcpu=native')
